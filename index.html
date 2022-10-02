@@ -69,7 +69,7 @@
 
 <!--me-->
 
-    <section id="me" class="me">
+    <section id="me" class="me element">
         <div class="inner">
     <h2>me</h2>
     <img src="img/me.jpg" alt="プロフィール画像">
@@ -89,7 +89,7 @@
     </div>
     </section>
 <!---licence-->  
-    <section id="licence" class="licence">
+    <section id="licence" class="licence element">
         <div class="inner">
     <h2>licence</h2>
     <div class="box">
@@ -112,7 +112,7 @@
         </div>
     </section>
 <!---vision-->
-    <section id="vision" class="vision">
+    <section id="vision" class="vision element">
         <div class="inner">
     <h2>vision</h2>
 
@@ -127,7 +127,7 @@
 
     <!---hobbies-->
 
-    <section id="hobbies" class="hobbies">
+    <section id="hobbies" class="hobbies element">
         <h2>hobbies</h2>
 
         <ul class="slider2">
@@ -222,7 +222,7 @@
     </section>
 
     <!--contact-->
-    <section class="contact">
+    <section class="contact element">
         <div class="inner">
         <h2>Contact</h2>
         <p>
@@ -289,6 +289,20 @@
             centerMode: true,//要素を中央ぞろえにする
             variableWidth: true,//幅の違う画像の高さを揃えて表示
             dots: true,//下部ドットナビゲーションの表示
+        });
+
+        $(function () {
+            $(window).scroll(function () {
+                const windowHeight = $(window).height();
+                const scroll = $(window).scrollTop();
+
+                $('.element').each(function () {
+                const targetPosition = $(this).offset().top;
+                if (scroll > targetPosition - windowHeight + 300) {
+                    $(this).addClass("is-fadein");
+                }
+                });
+            });
         });
     </script>
 
