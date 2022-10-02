@@ -49,6 +49,8 @@ header ul li a{
     
 }
 
+
+
 /*==================================================
 スライダーのためのcss
 ===================================*/
@@ -146,6 +148,21 @@ header ul li a{
     line-height: 400px;
     color: #fff;
 }
+
+.element {
+    /* 最初は非表示 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+    transition: opacity 2s, visibility 2s, transform 2s;
+  }
+  /* フェードイン時に入るクラス */
+  .is-fadein {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
 .me{
 
     padding: 60px 10px;
